@@ -17,7 +17,7 @@
 #include <cstring>
 #include <string>
 #include <cstdlib>
-
+#include <limits>
 
 class listaTell {
     public:
@@ -28,11 +28,12 @@ class listaTell {
         std::string dark_secret;
     
     void listarDados() {
-        std::cout << "First Name: " << first_name << "\n";
-        std::cout << "Last Name: " << last_name << "\n";
-        std::cout << "Nickname: " << nickname << "\n";
-        std::cout << "Phone Number: " << phone_number << "\n";
-        std::cout << "Darkest Secret: " << dark_secret << "\n";
+        std::cout << "First Name: " << first_name;
+        std::cout << " | Last Name: " << last_name;
+        std::cout << " | Nickname: " << nickname;
+        std::cout << " | Phone Number: " << phone_number;
+        std::cout << " | Darkest Secret: " << dark_secret;
+        std::cout << "\n";
     }
 };
 
