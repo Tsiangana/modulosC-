@@ -17,6 +17,7 @@
 #include <string>
 #include <cstdlib>
 #include <limits>
+#include <csignal>
 
 class Contact {
     private:
@@ -28,6 +29,14 @@ class Contact {
     public:
         Contact();
         ~Contact();
-        std::string getFirstName() const;
         void setFirstName(std::string value);
-}
+        void setLastName(std::string value);
+        void setNickname(std::string value);
+        void setPhoneNumber(std::string value);
+        void setDarkSecret(std::string value);
+        std::string getFirstName() const;
+        std::string getLastName() const;
+        std::string getNickName() const;
+        std::string getPhoneNumber() const;
+        std::string getDarkSecret() const;
+};

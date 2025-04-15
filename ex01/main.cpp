@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.hpp"
+#include "PhoneBook.hpp"
 
 static void init_program(void)
 {
@@ -37,19 +37,22 @@ static void    sair(void)
     exit(0);
 }
 
+static void handle_sigint(int sig){(void)sig;std::cout << "\nEncerrando\n";std::exit(0);}
+static void handle_sigquit(int sig){(void)sig; std::cout << "\nEXITING\n"; exit(0);}
+
 int main(void)
 {
     PhoneBook phone;
 
+    std::signal(SIGINT, handle_sigint);
+    std::signal(SIGQUIT, handle_sigquit);
     init_program(); std::string valor; 
     std::cout << "phone: ";
     while (true)
     {
-        std::getline(std::cin, valor);
-        //std::cout << "\033[F\033[K";
-        //std::cout << "\033[K";
+        if (!std::getline(std::cin, valor)){std::cout << "\nSAINDO..\n"; exit(0);}
         if (valor == "ADD")  phone.add();
-        else if (valor == "SEARCH") search();
+        else if (valor == "SEARCH") phone.search();
         else if (valor == "EXIT") sair();
         else std::cout << "phone: ";
     }

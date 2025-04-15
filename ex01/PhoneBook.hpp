@@ -18,14 +18,17 @@
 #include <cstdlib>
 #include <limits>
 #include "Contact.hpp"
+#include <sstream>
 
 class PhoneBook {
     private:
         Contact lista[8];
         int index;
+        int on;
     public:
         void search();
         void add();
+        void printTable();
         PhoneBook();
         ~PhoneBook();
 };
