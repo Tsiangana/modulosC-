@@ -12,7 +12,7 @@
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(){this->index = 0; this->on = 0;}
+PhoneBook::PhoneBook(){ this->index = 0; this->on = 0; }
 PhoneBook::~PhoneBook(){}
 
 static void handle_sigint(int sig){(void)sig;std::cout << "\nEncerrando\n";std::exit(0);}

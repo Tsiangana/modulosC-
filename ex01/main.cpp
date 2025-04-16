@@ -43,6 +43,7 @@ static void handle_sigquit(int sig){(void)sig; std::cout << "\nEXITING\n"; exit(
 int main(void)
 {
     PhoneBook phone;
+    PhoneBook phone1;
 
     std::signal(SIGINT, handle_sigint);
     std::signal(SIGQUIT, handle_sigquit);
